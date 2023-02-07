@@ -1,3 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿
+using Ten;
 
-Console.WriteLine("Hello, World!");
+var program =  new Inventory();
+program.Start();
