@@ -19,6 +19,7 @@ public class PackTest
                 case 0:
                     return;
                 case 1:
+                    Console.WriteLine(backPack);
                     Console.WriteLine(backPack.Add(GetItem()) ? "" : "Can't add item");
                     display.DisplayCurrentStatus(backPack);
                     break;
@@ -104,6 +105,10 @@ public class Pack
         
         return volume + inventoryItem.Volume > MaxVolume;
     }
+
+    public override string ToString() =>
+        PackItems.Aggregate("Pack containing:", (current, item) => current + $" {item.ToString()}");
+
 }
 
 
@@ -126,6 +131,8 @@ public class Arrow : InventoryItem
 
     public Arrow() : base(0.1, 0.05)
     { }
+
+    public override string ToString() => "Arrow";
 }
 
 public class Bow : InventoryItem
@@ -135,7 +142,8 @@ public class Bow : InventoryItem
 
     public Bow() : base(1, 4)
     { }
-
+    
+    public override string ToString() => "Bow";
 }
 
 public class Rope : InventoryItem
@@ -145,6 +153,8 @@ public class Rope : InventoryItem
 
     public Rope() : base(1, 1.5)
     { }
+    
+    public override string ToString() => "Rope";
 }
 
 public class Water : InventoryItem
@@ -154,6 +164,7 @@ public class Water : InventoryItem
 
     public Water() : base(2, 3)
     { }
+    public override string ToString() => "Water";
 }
 
 public class FoodRations : InventoryItem
@@ -163,6 +174,7 @@ public class FoodRations : InventoryItem
 
     public FoodRations() : base(1, 0.5)
     { }
+    public override string ToString() => "Food Ration";
 }
 
 public class Sword : InventoryItem
@@ -172,4 +184,5 @@ public class Sword : InventoryItem
 
     public Sword() : base(5, 3)
     { }
+    public override string ToString() => "Sword";
 }
