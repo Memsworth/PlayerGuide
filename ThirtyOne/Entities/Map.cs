@@ -15,5 +15,5 @@ public class Map
         GameGrid = new RoomType[row, col];
     }
 
-    public void SetTerrain(Location location, RoomType roomType) => GameGrid[location.X, location.Y] = roomType;
+    public void SetTerrain(Location location, RoomType roomType) => GameGrid[location.Row, location.Col] = roomType;
 }

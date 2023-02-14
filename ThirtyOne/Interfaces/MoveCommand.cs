@@ -16,14 +16,14 @@ public class MoveCommand : ICommand
         var currentLocation = game.Player.PlayerLocation;
         Location newLocation = Direction switch
         {
-            Directions.North => new Location(currentLocation.X, currentLocation.Y - 1),
-            Directions.East => new Location(currentLocation.X + 1, currentLocation.Y),
-            Directions.South => new Location(currentLocation.X, currentLocation.Y + 1),
-            Directions.West => new Location(currentLocation.X - 1, currentLocation.Y),
+            Directions.North => new Location(currentLocation.Row, currentLocation.Col - 1),
+            Directions.East => new Location(currentLocation.Row + 1, currentLocation.Col),
+            Directions.South => new Location(currentLocation.Row, currentLocation.Col + 1),
+            Directions.West => new Location(currentLocation.Row - 1, currentLocation.Col),
             _ => throw new ArgumentOutOfRangeException()
         };
 
-        if (game.CheckMap(newLocation))
+        if (game.IsOutOfBound(newLocation))
         {
             game.Player.SetNewPlayerLocation(newLocation);
         }

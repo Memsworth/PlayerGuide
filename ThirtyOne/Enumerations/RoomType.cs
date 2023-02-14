@@ -2,5 +2,5 @@
 
 public enum RoomType
 {
-    Empty, Entrance, Fountain, OffMap
+    Empty, Entrance, Fountain
 }

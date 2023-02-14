@@ -2,12 +2,12 @@
 
 public class Location
 {
-    public int X { get; }
-    public int Y { get; }
+    public int Row { get; }
+    public int Col { get; }
 
     public Location(int x, int y)
     {
-        X = x;
-        Y = y;
+        Row = x;
+        Col = y;
     }
 }

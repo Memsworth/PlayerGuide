@@ -12,6 +12,7 @@ public class DisplayEngine
 
     private void DisplayPlayerLocation(Player player)
     {
-        Console.WriteLine($"You are in the room at (Row={player.PlayerLocation.X}, Column={player.PlayerLocation.Y}).");
+        Console.WriteLine($"You are in the room at (Row={player.PlayerLocation.Row}, Column={player.PlayerLocation.Col}).");
+        Console.WriteLine("What you wanna do");
     }
 }
